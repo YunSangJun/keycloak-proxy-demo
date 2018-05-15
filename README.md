@@ -32,12 +32,14 @@ You should create Realm, Client and Role on Keycloak administrator dashboard.
 ## Deploy demo application
 
 Deploy demo application using kubectl.
+
 ```
 $ kubectl apply -f deployment.yaml
 $ kubectl apply -f service.yaml
 ```
 
 Confirm service and pod are correctly defined and running.
+
 ```
 $ kubectl get po,svc
 NAME                       READY     STATUS    RESTARTS   AGE
@@ -49,11 +51,13 @@ svc/demo-service   ClusterIP   172.21.189.11   <none>        80/TCP    10s
 Connect to `http://127.0.0.1:8080/user` and `http://127.0.0.1:8080/admin`.
 You are able to see "Hello User!" and "Hello Admin!".
 Currently, you can access to `/user` and `/admin` endpoint without authentication.
-In the next step, we are going to make `/admin` endpoint to be accessed only for user who is authenticated and authorized via Keycloak.
+
 ```
 $ kubectl port-forward demo-85cdbcc8c7-6pkbv 8080:8080
 Forwarding from 127.0.0.1:8080 -> 808
 ```
+
+In the next step, we are going to make `/admin` endpoint to be accessed only for user who is authenticated and authorized via Keycloak.
 
 ## Deploy Keycloak Proxy
 
