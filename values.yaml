@@ -1,0 +1,42 @@
+
+image: jboss/keycloak-proxy
+imageTag: 3.4.0.Final
+imagePullPolicy: IfNotPresent
+
+service:
+  ## ServiceType
+  ## ref: https://kubernetes.io/docs/user-guide/services/#publishing-services---service-types
+  type: NodePort
+
+  ## Optional static port assignment for service type NodePort.
+  nodePort: 32589
+
+  ## HTTP listen port.
+  port: 80
+
+## Ingress configuration.
+## ref: https://kubernetes.io/docs/user-guide/ingress/
+ingress:
+  enabled: false
+
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+
+  ## List of hosts for the ingress
+  hosts:
+    - keycloak-proxy.example.com
+
+  ## TLS configuration
+  tls:
+    enabled: false
+    existingSecret: ""
+
+configmap:
+  targetUrl: http://demo-service
+  realm: demo
+  realmPublicKey: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsLa2YmPyakziINoUgRLrEHLCKcyz62LhLU4JQsbJXMa1Zj4u/bU5D4dau1WkF94ivKV1osvqJqtQ4jCJYfRYrhCYeYOZWB7YFxELj+zMyP72Gxqg/YfWXKrzVnI5MYdZNx52dWAvBVDsDrxiZzJ0Xc92qCdKnEbvpK50XCh15KjWSjucbcJPwGX6kclLCmX0V47ziSo83FjH3ddFP81Kmza3on569Xi0QAAx3g/ZgPgZOSuF9OWwh3aMTwkfx9DlGeU5pY7uqvjuM9v33g0tdpOEelRAqu0aH/HEFXk9Mn74U1GQU/drflQVWEbv+9YvnUJN4cGt0oqmwQYU+Ix4qwIDAQAB"
+  authServerUrl: http://keycloak.cberry.xyz/auth
+  resource: demo
+  secret: 2b2c17f0-245e-4978-a663-9a02a268a8f4
+  pattern: /user
+  rolesAllowed: user
