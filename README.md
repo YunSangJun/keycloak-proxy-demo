@@ -46,14 +46,14 @@ po/demo-85cdbcc8c7-6pkbv   1/1       Running   0          10s
 NAME               TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
 svc/demo-service   ClusterIP   172.21.189.11   <none>        80/TCP    10s
 ```
-Connect to 127.0.0.1:8080.
-Now, you are able to see "Hello".
+Connect to `http://127.0.0.1:8080/user` and `http://127.0.0.1:8080/admin`.
+You are able to see "Hello User!" and "Hello Admin!".
+Currently, you can access to `/user` and `/admin` endpoint without authentication.
+In the next step, we are going to make `/admin` endpoint to be accessed only for user who is authenticated and authorized via Keycloak.
 ```
 $ kubectl port-forward demo-85cdbcc8c7-6pkbv 8080:8080
 Forwarding from 127.0.0.1:8080 -> 808
 ```
-
-Demo application can access without authentication.
 
 ## Deploy Keycloak Proxy
 
