@@ -70,6 +70,8 @@ In the next step, we are going to make `/admin` endpoint to be accessed only for
 
 You can easily install Keycloak Proxy using [Keycloak Proxy Helm Chart](https://github.com/kubernetes/charts/tree/master/incubator/keycloak-proxy).
 
+Notes: We configured Keycloak realm, client and role in [Keycloak Guide](https://github.com/YunSangJun/keycloak-proxy-demo/blob/master/keycloak-guide.md). You should set those information to configmap in `values.yaml`.
+
 1. Configure `values.yaml`
 
 ```
@@ -155,7 +157,28 @@ NOTES:
      echo http://$NODE_IP:$NODE_PORT
 ```
 
-## Connect to demo application with authentication and authorization
+## Confirm authentication and authorization
 
+1. Connect to `http://$NODE_IP:$NODE_PORT/user`
 
-## Summary
+    You can still access to `/user` endpoint without any authentication because Keycloak Proxy doesn't check authentication and authorization about `/user` endpoint.
+    
+    ![Authentication and Authorization](./img/page_user.png)
+
+2. Connect to `http://$NODE_IP:$NODE_PORT/admin`
+
+    Keycloak Proxy will redirect to Keycloak login page because Keycloak Proxy check authentication and authorization about `/admin` endpoint.
+
+    ![Authentication and Authorization](./img/login1.png)
+
+    If you don't have a Keycloak account, create user. Click "Register" button and insert user information such as below.
+    ![Authentication and Authorization](./img/add_user.png)
+
+    Login with the user.
+
+    ![Authentication and Authorization](./img/login2.png)
+    
+    If you success to login, you become valid user.
+    However, you will may get a "HTTP 403 error" because you don't have authorization about `/admin` endpoint.
+    
+4. 
