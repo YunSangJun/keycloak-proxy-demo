@@ -161,24 +161,22 @@ NOTES:
 
 1. Connect to `http://$NODE_IP:$NODE_PORT/user`
 
-    You can still access to `/user` endpoint without any authentication because Keycloak Proxy doesn't check authentication and authorization about `/user` endpoint.
-    
-    ![Authentication and Authorization](./img/page_user.png)
+You can still access to `/user` endpoint without any authentication because Keycloak Proxy doesn't check authentication and authorization about `/user` endpoint.
+
+![Authentication and Authorization](./img/page_user.png)
 
 2. Connect to `http://$NODE_IP:$NODE_PORT/admin`
 
-    Keycloak Proxy will redirect to Keycloak login page because Keycloak Proxy check authentication and authorization about `/admin` endpoint.
+Keycloak Proxy will redirect to Keycloak login page because Keycloak Proxy check authentication and authorization about `/admin` endpoint.
+![Authentication and Authorization](./img/login1.png)
 
-    ![Authentication and Authorization](./img/login1.png)
+If you don't have a Keycloak account, create user. Click "Register" button and insert user information such as below.
+![Authentication and Authorization](./img/add_user.png)
 
-    If you don't have a Keycloak account, create user. Click "Register" button and insert user information such as below.
-    ![Authentication and Authorization](./img/add_user.png)
-
-    Login with the user.
-
-    ![Authentication and Authorization](./img/login2.png)
+Login with the user.
+![Authentication and Authorization](./img/login2.png)
     
-    If you success to login, you become valid user.
-    However, you will may get a "HTTP 403 error" because you don't have authorization about `/admin` endpoint.
+If you success to login, you become valid user.
+However, you will may get a "HTTP 403 error" because you don't have authorization about `/admin` endpoint.
     
 4. 
