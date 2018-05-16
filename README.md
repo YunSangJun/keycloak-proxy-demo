@@ -8,11 +8,11 @@ This demo application is intended to help you understand how to use the Keycloak
 
 - Keycloak Proxy allows request from client to /user endpoint
 
-![Keycloak Proxy Flow Allow](../img/keycloak_proxy_flow_allow.png)
+![Keycloak Proxy Flow Allow](./img/keycloak_proxy_flow_allow.png)
 
 - Keycloak Proxy denies request from client to /admin endpoint
 
-![Keycloak Proxy Flow Deny](../img/keycloak_proxy_flow_deny.png)
+![Keycloak Proxy Flow Deny](./img/keycloak_proxy_flow_deny.png)
 
 ## What is a Keycloak Proxy?
 
