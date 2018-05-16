@@ -32,11 +32,31 @@ You can easily install Keycloak using [Keycloak Helm Chart](https://github.com/k
 
 You should create Realm, Client and Role on Keycloak administrator dashboard.
 
-1. Create Realm
+1. Create and configure realm
+
+- Create realm
+![Create realm](./img/add_realm.png)
+
+- Configure realm general
+![Create realm](./img/realm_general.png)
+
+- Configure realm login
+![Create realm](./img/realm_login.png)
+
+- Confirm realm public key
+![Create realm](./img/realm_publickey.png)
 
 2. Create Client
 
+![Create realm](./img/add_client1.png)
+
+![Create realm](./img/add_client2.png)
+
 3. Create Role
+
+![Create realm](./img/add_role1.png)
+
+![Create realm](./img/add_role2.png)
 
 ## Deploy demo application
 
