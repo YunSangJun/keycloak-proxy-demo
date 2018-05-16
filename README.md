@@ -63,13 +63,13 @@ You should create Realm, Client and Role on Keycloak administrator dashboard.
 3. Create Role
 
 - Click "Add Role" button
-![Create realm](./img/add_role1.png)
+![Create Role](./img/add_role1.png)
 
 - Insert "admin" and Save
-![Create realm](./img/add_role2.png)
+![Create Role](./img/add_role2.png)
 
-- Select "admin" on "Available Roles" and click "Add slected" button
-![Create realm](./img/role_default.png)
+- Select "admin" on "Available Roles" and click "Add selected" button
+![Create Role](./img/role_default.png)
 
 ## Deploy demo application
 
