@@ -176,7 +176,15 @@ NOTES:
     Login with the user.
     ![Authentication and Authorization](./img/login2.png)
 
-    If you success to login, you become valid user.
+    If you success to login, so you become valid user.
     However, you will may get a "HTTP 403 error" because you don't have authorization about `/admin` endpoint.
+    ![Authentication and Authorization](./img/page_admin_error.png)
     
-3. 
+3. Map "admin" role to user account
+  
+    Select "admin" role in "Available Roles" and Click "Add selected" button.
+    ![Authentication and Authorization](./img/page_admin_success.png)
+    
+    Now, you have an authorization about `/admin` endpoint.
+    You can access to `/admin` endpoint.
+    ![Authentication and Authorization](./img/role_mapping.png)
