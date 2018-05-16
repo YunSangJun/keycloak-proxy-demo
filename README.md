@@ -4,7 +4,7 @@
 
 This demo application is intended to help you understand how to use the Keycloak Proxy and how it works.
 
-- Client only has an authorization for `/user` endpoint
+- Precondition : Keycloak Proxy check only authentication and authorization about `/admin` endpoint
 
 - Keycloak Proxy allows request from client to `/user` endpoint
 
