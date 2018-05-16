@@ -32,44 +32,7 @@ You can easily install Keycloak using [Keycloak Helm Chart](https://github.com/k
 
 You should create Realm, Client and Role on Keycloak administrator dashboard.
 
-1. Create and configure realm
-
-- Create realm
-![Create realm](./img/add_realm.png)
-
-- Configure realm general
-![Create realm](./img/realm_general.png)
-
-- Configure realm login
-![Create realm](./img/realm_login.png)
-
-- Confirm realm public key
-![Create realm](./img/realm_publickey.png)
-
-2. Create Client
-
-- Click "Create" button
-![Create Client](./img/add_client1.png)
-
-- Insert "Client ID" and Save
-![Create Client](./img/add_client2.png)
-
-- Configure client settings
-![Create Client](./img/client_settings.png)
-
-- Confirm client secret
-![Create Client](./img/client_secret.png)
-
-3. Create Role
-
-- Click "Add Role" button
-![Create Role](./img/add_role1.png)
-
-- Insert "admin" and Save
-![Create Role](./img/add_role2.png)
-
-- Select "admin" on "Available Roles" and click "Add selected" button
-![Create Role](./img/role_default.png)
+Please refer to [Keycloak Guide](https://github.com/YunSangJun/keycloak-proxy-demo/blob/master/keycloak-guide.md).
 
 ## Deploy demo application
 
@@ -90,14 +53,16 @@ po/demo-85cdbcc8c7-6pkbv   1/1       Running   0          10s
 NAME               TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
 svc/demo-service   ClusterIP   172.21.189.11   <none>        80/TCP    10s
 ```
-Connect to `http://127.0.0.1:8080/user` and `http://127.0.0.1:8080/admin`.
-You are able to see "Hello User!" and "Hello Admin!".
-Currently, you can access to `/user` and `/admin` endpoint without authentication.
 
+Configure port forward to connect demo application.
 ```
 $ kubectl port-forward demo-85cdbcc8c7-6pkbv 8080:8080
 Forwarding from 127.0.0.1:8080 -> 808
 ```
+
+Connect to `http://127.0.0.1:8080/user` and `http://127.0.0.1:8080/admin`.
+You are able to see "Hello User!" and "Hello Admin!".
+Currently, you can access to `/user` and `/admin` endpoint without authentication.
 
 In the next step, we are going to make `/admin` endpoint to be accessed only for user who is authenticated and authorized via Keycloak.
 
