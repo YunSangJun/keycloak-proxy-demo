@@ -8,11 +8,15 @@ Precondition : Keycloak Proxy check only authentication and authorization about 
 
 - Keycloak Proxy allows request from client to `/user` endpoint
 
-![Keycloak Proxy Flow Allow](./img/keycloak_proxy_flow_allow.png)
+![Keycloak Proxy Flow Allow](./img/keycloak_proxy_flow_user_allow.png)
 
-- Keycloak Proxy denies request from client to `/admin` endpoint
+- Keycloak Proxy denies request from client to `/admin` endpoint if client doesn’t have admin roles
 
-![Keycloak Proxy Flow Deny](./img/keycloak_proxy_flow_deny.png)
+![Keycloak Proxy Flow Deny](./img/keycloak_proxy_flow_admin_deny.png)
+
+- Keycloak Proxy allows request from client to `/admin` endpoint if client has admin roles
+
+![Keycloak Proxy Flow Deny](./img/keycloak_proxy_flow_admin_allow.png)
 
 ## What is a Keycloak Proxy?
 
