@@ -48,9 +48,17 @@ You should create Realm, Client and Role on Keycloak administrator dashboard.
 
 2. Create Client
 
-![Create realm](./img/add_client1.png)
+- Click "Create" button
+![Create Client](./img/add_client1.png)
 
-![Create realm](./img/add_client2.png)
+- Insert "Client ID" and Save
+![Create Client](./img/add_client2.png)
+
+- Configure client settings
+![Create Client](./img/client_settings.png)
+
+- Confirm client secret
+![Create Client](./img/client_secret.png)
 
 3. Create Role
 
