@@ -39,5 +39,3 @@ In this article, we will use `http://WORK_NODE_IP:NODE_PORT` as Redirect URL.
 2. Insert "admin" and Save
 ![Create Role](./img/add_role2.png)
 
-3. Select "admin" on "Available Roles" and click "Add selected" button
-![Create Role](./img/role_default.png)
