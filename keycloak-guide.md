@@ -12,7 +12,7 @@
 ![Create realm](./img/realm_login.png)
 
 4. Confirm realm public key
-Click "Public key" button and confirm the key on pop-up window.
+<br>Click "Public key" button and confirm the key on pop-up window.
 ![Create realm](./img/realm_publickey.png)
 
 ## Create Client
@@ -24,7 +24,7 @@ Click "Public key" button and confirm the key on pop-up window.
 ![Create Client](./img/add_client2.png)
 
 3. Configure client settings
-Note: Valid Redirect URIs is a list of URLs to accept as Redirect URLs. 
+<br>Note: Valid Redirect URIs is a list of URLs to accept as Redirect URLs. 
 In this article, we will use `http://WORK_NODE_IP:NODE_PORT` as Redirect URL. 
 ![Create Client](./img/client_settings.png)
 
