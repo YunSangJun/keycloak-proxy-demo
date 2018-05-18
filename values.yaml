@@ -1,6 +1,6 @@
 
 image: jboss/keycloak-proxy
-imageTag: 3.4.0.Final
+imageTag: 3.4.2.Final
 imagePullPolicy: IfNotPresent
 
 service:
@@ -35,8 +35,8 @@ configmap:
   targetUrl: http://demo-service
   realm: demo
   realmPublicKey: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsLa2YmPyakziINoUgRLrEHLCKcyz62LhLU4JQsbJXMa1Zj4u/bU5D4dau1WkF94ivKV1osvqJqtQ4jCJYfRYrhCYeYOZWB7YFxELj+zMyP72Gxqg/YfWXKrzVnI5MYdZNx52dWAvBVDsDrxiZzJ0Xc92qCdKnEbvpK50XCh15KjWSjucbcJPwGX6kclLCmX0V47ziSo83FjH3ddFP81Kmza3on569Xi0QAAx3g/ZgPgZOSuF9OWwh3aMTwkfx9DlGeU5pY7uqvjuM9v33g0tdpOEelRAqu0aH/HEFXk9Mn74U1GQU/drflQVWEbv+9YvnUJN4cGt0oqmwQYU+Ix4qwIDAQAB"
-  authServerUrl: http://keycloak.cberry.xyz/auth
+  authServerUrl: http://url-to-keycloak.example.com/auth
   resource: demo
   secret: 2b2c17f0-245e-4978-a663-9a02a268a8f4
-  pattern: /user
-  rolesAllowed: user
+  pattern: /admin	
+  rolesAllowed: admin
