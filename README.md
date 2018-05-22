@@ -79,37 +79,48 @@ Notes: We configured Keycloak realm, client and role in [Keycloak Guide](https:/
 1. Configure `values.yaml`
 
 ```
-image: jboss/keycloak-proxy
-imageTag: 3.4.0.Final
-imagePullPolicy: IfNotPresent
+replicaCount: 1
+
+image:
+  repository: jboss/keycloak-proxy
+  tag: 3.4.2.Final
+  pullPolicy: IfNotPresent
 
 service:
-  ## ServiceType
-  ## ref: https://kubernetes.io/docs/user-guide/services/#publishing-services---service-types
   type: NodePort
-
-  ## Optional static port assignment for service type NodePort.
   nodePort: 32589
-
-  ## HTTP listen port.
   port: 80
 
-## Ingress configuration.
-## ref: https://kubernetes.io/docs/user-guide/ingress/
 ingress:
   enabled: false
-
   annotations: {}
     # kubernetes.io/ingress.class: nginx
-
-  ## List of hosts for the ingress
+    # kubernetes.io/tls-acme: "true"
+  path: /
   hosts:
     - keycloak-proxy.example.com
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
 
-  ## TLS configuration
-  tls:
-    enabled: false
-    existingSecret: ""
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
 
 configmap:
   targetUrl: http://demo-service
@@ -118,7 +129,7 @@ configmap:
   authServerUrl: http://url-to-keycloak.example.com/auth
   resource: demo
   secret: 2b2c17f0-245e-4978-a663-9a02a268a8f4
-  pattern: /admin
+  pattern: /admin	
   rolesAllowed: admin
 ```
 
